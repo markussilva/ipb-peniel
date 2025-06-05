@@ -1,37 +1,37 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
+import Image from "next/image";
+import Link from "next/link";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
 // Links rápidos
 const quickLinks = [
-  { label: 'Início', href: '/' },
-  { label: 'Sobre', href: '#sobre' },
-  { label: 'Ministérios', href: '#ministerios' },
-  { label: 'Eventos', href: '#eventos' },
-  { label: 'Contato', href: '#contato' },
-]
+  { label: "Início", href: "/" },
+  { label: "Sobre", href: "#sobre" },
+  { label: "Ministérios", href: "#ministerios" },
+  { label: "Eventos", href: "#eventos" },
+  { label: "Contato", href: "#contato" },
+];
 
 // Redes sociais
 const socialLinks = [
   {
     icon: FaFacebook,
-    href: 'https://facebook.com/igrejapresbiteriana',
-    label: 'Facebook',
+    href: "https://facebook.com/igrejapresbiteriana",
+    label: "Facebook",
   },
   {
     icon: FaInstagram,
-    href: 'https://instagram.com/igrejapresbiteriana',
-    label: 'Instagram',
+    href: "https://instagram.com/igrejapresbiteriana",
+    label: "Instagram",
   },
   {
     icon: FaYoutube,
-    href: 'https://youtube.com/igrejapresbiteriana',
-    label: 'YouTube',
+    href: "https://youtube.com/igrejapresbiteriana",
+    label: "YouTube",
   },
-]
+];
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-azul-900 text-white">
@@ -52,7 +52,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-white/80">
-              "Conhecendo a Cristo e fazendo-o conhecido"
+              &quot;Conhecendo a Cristo e fazendo-o conhecido&quot;
             </p>
           </div>
 
@@ -102,11 +102,11 @@ export default function Footer() {
         {/* Direitos Autorais */}
         <div className="mt-12 pt-8 border-t border-white/10 text-center text-white/60">
           <p>
-            © {currentYear} Igreja Presbiteriana do Brasil - Peniel. Todos os direitos
-            reservados.
+            © {currentYear} Igreja Presbiteriana do Brasil - Peniel. Todos os
+            direitos reservados.
           </p>
         </div>
       </div>
     </footer>
-  )
-} 
+  );
+}
