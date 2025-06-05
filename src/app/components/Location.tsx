@@ -1,30 +1,30 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { FaWhatsapp, FaClock, FaMapMarkerAlt } from 'react-icons/fa'
-import dynamic from 'next/dynamic'
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { FaWhatsapp, FaClock, FaMapMarkerAlt } from "react-icons/fa";
+import dynamic from "next/dynamic";
 
 // Importação dinâmica do mapa para evitar erros de SSR
-const Map = dynamic(
-  () => import('./Map'),
-  {
-    loading: () => (
-      <div className="w-full h-[400px] bg-gray-200 animate-pulse rounded-lg" />
-    ),
-    ssr: false,
-  }
-)
+const Map = dynamic(() => import("./Map"), {
+  loading: () => (
+    <div className="w-full h-[400px] bg-gray-200 animate-pulse rounded-lg" />
+  ),
+  ssr: false,
+});
 
-// Horários de culto
+// Horários de culto ATUALIZADOS
 const worshipTimes = [
-  { day: 'Domingo', times: ['09:00 - Escola Dominical', '10:30 - Culto Matutino', '19:00 - Culto Vespertino'] },
-  { day: 'Quarta-feira', times: ['19:30 - Estudo Bíblico'] },
-  { day: 'Sábado', times: ['15:00 - Culto de Jovens'] },
-]
+  {
+    day: "Domingo",
+    times: ["09:00 - Escola Dominical", "18:30 - Culto Vespertino"],
+  },
+  { day: "Quarta-feira", times: ["19:30 - Reuniao de Oracao"] },
+  { day: "Sexta", times: ["19:00 - Culto de Jovens"] },
+];
 
 export default function Location() {
-  const [isMapLoaded, setIsMapLoaded] = useState(false)
+  const [isMapLoaded, setIsMapLoaded] = useState(false);
 
   return (
     <section id="contato" className="py-16 md:py-24 bg-white">
@@ -78,9 +78,9 @@ export default function Location() {
                   <FaMapMarkerAlt />
                 </div>
                 <div>
-                  <p>Rua Exemplo, 123</p>
-                  <p>Bairro - Cidade/UF</p>
-                  <p>CEP: 12345-678</p>
+                  <p>Rua Custódio de Melo, 303</p>
+                  <p>Cidade Alta - Cuiabá/MT</p>
+                  <p>CEP: 78030-340</p>
                 </div>
               </div>
             </div>
@@ -127,5 +127,5 @@ export default function Location() {
         </div>
       </div>
     </section>
-  )
-} 
+  );
+}

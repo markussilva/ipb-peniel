@@ -1,13 +1,19 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 // Modal de Culto Online
-function LiveStreamModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
-  if (!isOpen) return null
+function LiveStreamModal({
+  isOpen,
+  onClose,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+}) {
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
@@ -41,19 +47,29 @@ function LiveStreamModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
         <div className="aspect-video relative">
           <iframe
             className="absolute inset-0 w-full h-full rounded-lg"
-            src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO"
-            title="Culto Online"
+            src="https://www.youtube.com/embed/live_stream?channel=@ipbpeniel-cuiaba7215"
+            title="Culto Online - Igreja Presbiteriana Peniel"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
         </div>
+        <div className="mt-4 text-center">
+          <a
+            href="https://www.youtube.com/@ipbpeniel-cuiaba7215"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition-colors"
+          >
+            Acesse nosso canal no YouTube
+          </a>
+        </div>
       </motion.div>
     </div>
-  )
+  );
 }
 
 export default function Hero() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <section className="relative h-screen">
@@ -81,7 +97,7 @@ export default function Hero() {
           >
             Bem-vindo à Igreja Presbiteriana do Brasil - Peniel
           </motion.h1>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -119,5 +135,5 @@ export default function Hero() {
         onClose={() => setIsModalOpen(false)}
       />
     </section>
-  )
-} 
+  );
+}

@@ -1,48 +1,48 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { motion } from 'framer-motion'
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 // Tipos
 type Ministry = {
-  id: string
-  title: string
-  description: string
-  image: string
-  ageRange: string
-}
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  ageRange: string;
+};
 
 // Dados mockados (futuramente virão de um CMS)
 const ministries: Ministry[] = [
   {
-    id: 'infantil',
-    title: 'Ministério Infantil',
-    description: 'Discipulado e ensino bíblico para crianças',
-    image: '/images/ministry-kids.jpg',
-    ageRange: '4-12 anos',
+    id: "infantil",
+    title: "Ministério Infantil",
+    description: "Discipulado e ensino bíblico para crianças",
+    image: "/images/ministry-kids.jpeg",
+    ageRange: "4-12 anos",
   },
   {
-    id: 'juvenil',
-    title: 'Ministério de Jovens',
-    description: 'Comunhão e crescimento espiritual',
-    image: '/images/ministry-youth.jpg',
-    ageRange: '13-25 anos',
+    id: "juvenil",
+    title: "Ministério de Jovens",
+    description: "Comunhão e crescimento espiritual",
+    image: "/images/ministry-youth.jpeg",
+    ageRange: "13-25 anos",
   },
   {
-    id: 'mulheres',
-    title: 'Ministério de Mulheres',
-    description: 'Comunhão e estudo bíblico',
-    image: '/images/ministry-women.jpg',
-    ageRange: '18+ anos',
+    id: "mulheres",
+    title: "Ministério de Mulheres",
+    description: "Comunhão e estudo bíblico",
+    image: "/images/ministry-women.jpeg",
+    ageRange: "18+ anos",
   },
   {
-    id: 'homens',
-    title: 'Ministério de Homens',
-    description: 'Discipulado e liderança',
-    image: '/images/ministry-men.jpg',
-    ageRange: '18+ anos',
+    id: "homens",
+    title: "Ministério de Homens",
+    description: "Discipulado e liderança",
+    image: "/images/ministry-men.jpeg",
+    ageRange: "18+ anos",
   },
-]
+];
 
 // Componente de Card
 function MinistryCard({ ministry }: { ministry: Ministry }) {
@@ -82,7 +82,7 @@ function MinistryCard({ ministry }: { ministry: Ministry }) {
       {/* Overlay de hover */}
       <div className="absolute inset-0 bg-azul-900/0 group-hover:bg-azul-900/10 transition-colors duration-300" />
     </motion.div>
-  )
+  );
 }
 
 export default function Ministries() {
@@ -114,5 +114,5 @@ export default function Ministries() {
         </div>
       </div>
     </section>
-  )
-} 
+  );
+}

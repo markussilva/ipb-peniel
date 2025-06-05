@@ -1,42 +1,42 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import { FaMapMarkerAlt } from 'react-icons/fa'
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 // Tipos
 type Event = {
-  id: string
-  title: string
-  date: string
-  location: string
-  description: string
-}
+  id: string;
+  title: string;
+  date: string;
+  location: string;
+  description: string;
+};
 
 // Dados mockados (futuramente virão de um CMS)
 const mockEvents: Event[] = [
   {
-    id: '1',
-    title: 'Culto de Celebração',
-    date: '2024-03-24T10:00:00',
-    location: 'Templo Principal',
-    description: 'Culto dominical com louvor e pregação',
+    id: "1",
+    title: "Escola Biblica Dominical",
+    date: "2025-06-08T09:00:00",
+    location: "Templo Principal",
+    description: "A EBD reflete o princípio reformado da sola Scriptura ",
   },
   {
-    id: '2',
-    title: 'Estudo Bíblico',
-    date: '2024-03-27T19:30:00',
-    location: 'Salão Social',
-    description: 'Estudo do livro de Romanos',
+    id: "2",
+    title: "Culto ao Senhor",
+    date: "2025-06-08T18:30:00",
+    location: "Templo Principal",
+    description: "Culto sublime ao Senhor",
   },
   {
-    id: '3',
-    title: 'Encontro de Jovens',
-    date: '2024-03-30T15:00:00',
-    location: 'Área de Convivência',
-    description: 'Comunhão e estudo bíblico',
+    id: "3",
+    title: "Reunião de oração",
+    date: "2025-06-18T19:30:00",
+    location: "Templo Principal",
+    description: "Comunhão, oracão e estudo bíblico",
   },
-]
+];
 
 // Componente de Skeleton
 function EventSkeleton() {
@@ -46,18 +46,18 @@ function EventSkeleton() {
       <div className="h-4 bg-gray-200 rounded w-3/4 mb-2" />
       <div className="h-4 bg-gray-200 rounded w-1/2" />
     </div>
-  )
+  );
 }
 
 // Componente de Card de Evento
 function EventCard({ event }: { event: Event }) {
-  const formattedDate = new Date(event.date).toLocaleDateString('pt-BR', {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-    hour: '2-digit',
-    minute: '2-digit',
-  })
+  const formattedDate = new Date(event.date).toLocaleDateString("pt-BR", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 
   return (
     <motion.div
@@ -91,22 +91,22 @@ function EventCard({ event }: { event: Event }) {
 
       <p className="text-gray-600">{event.description}</p>
     </motion.div>
-  )
+  );
 }
 
 export default function Events() {
-  const [events, setEvents] = useState<Event[]>([])
-  const [isLoading, setIsLoading] = useState(true)
+  const [events, setEvents] = useState<Event[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Simulando carregamento de dados
   useEffect(() => {
     const timer = setTimeout(() => {
-      setEvents(mockEvents)
-      setIsLoading(false)
-    }, 1500)
+      setEvents(mockEvents);
+      setIsLoading(false);
+    }, 1500);
 
-    return () => clearTimeout(timer)
-  }, [])
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section id="eventos" className="py-16 md:py-24 bg-creme-50">
@@ -123,7 +123,8 @@ export default function Events() {
             Próximos Eventos
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Confira nossa agenda de eventos e participe das atividades da igreja.
+            Confira nossa agenda de eventos e participe das atividades da
+            igreja.
           </p>
         </motion.div>
 
@@ -138,12 +139,10 @@ export default function Events() {
             </>
           ) : (
             // Eventos carregados
-            events.map((event) => (
-              <EventCard key={event.id} event={event} />
-            ))
+            events.map((event) => <EventCard key={event.id} event={event} />)
           )}
         </div>
       </div>
     </section>
-  )
-} 
+  );
+}
