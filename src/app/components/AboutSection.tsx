@@ -2,14 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import {
-  FaBible,
-  FaCross,
-  FaDove,
-  FaCrown,
-  FaStar,
-  FaHandshake,
-} from "react-icons/fa";
+import { FaBible, FaCross, FaDove, FaCrown, FaStar } from "react-icons/fa";
 
 // Componente de ícone com animação
 function IconCard({
